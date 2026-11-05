@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docx-strip"
+version = "1.0.0"
+description = "Copy a .docx and strip tracked changes, comments, and personal metadata so a clean copy can be shared. Pure Python stdlib, fully offline."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Asdale Dynamics, LLC" }]
+requires-python = ">=3.9"
+keywords = ["docx", "track-changes", "comments", "metadata", "privacy", "offline"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Office/Business :: Office Suites",
+    "Topic :: Text Processing :: Markup",
+]
+
+[project.scripts]
+docx-strip = "docx_strip.cli:main"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools]
+packages = ["docx_strip"]
